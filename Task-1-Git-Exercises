@@ -1,0 +1,420 @@
+# Task 01 – Git Exercises
+
+## Overview
+
+For this task, I completed the Git Exercises to strengthen my understanding of Git and version control. The exercises covered important Git concepts such as commits, branches, merging, rebasing, conflict resolution, cherry-picking, resetting, and manipulating commit history.
+
+The goal of this task was not only to complete the levels, but also to understand why each Git command was used and how it affects the repository and commit history.
+
+---
+
+# Exercises
+
+> **Note:** Replace or adjust the commands below if your exact solution for a level was different.
+
+## 1. Commit
+
+### Command Used
+
+```bash
+git commit
+```
+
+### Explanation
+
+The `git commit` command creates a new commit containing the changes that have been staged. A commit acts like a saved checkpoint in the project's history.
+
+I used this command to create the required commit and move the repository to the expected state.
+
+---
+
+## 2. Branch
+
+### Command Used
+
+```bash
+git branch <branch-name>
+git checkout <branch-name>
+```
+
+Or:
+
+```bash
+git checkout -b <branch-name>
+```
+
+### Explanation
+
+A branch allows development to happen independently from the main branch.
+
+The `git branch` command creates a new branch, while `git checkout` switches to it. The `-b` option can create and switch to the branch in a single command.
+
+---
+
+## 3. Merge
+
+### Command Used
+
+```bash
+git merge <branch-name>
+```
+
+### Explanation
+
+The `git merge` command combines the changes from another branch into the currently checked-out branch.
+
+I used it to bring the commits from one branch into another and combine their histories.
+
+---
+
+## 4. Rebase
+
+### Command Used
+
+```bash
+git rebase <branch-name>
+```
+
+### Explanation
+
+Rebasing moves the commits from the current branch and reapplies them on top of another branch.
+
+Unlike merging, rebasing can create a cleaner and more linear commit history.
+
+---
+
+## 5. Fast-Forward Merge
+
+### Command Used
+
+```bash
+git merge <branch-name>
+```
+
+### Explanation
+
+When the current branch has no new commits after the point where the target branch was created, Git can perform a fast-forward merge.
+
+Instead of creating a new merge commit, Git simply moves the branch pointer forward.
+
+---
+
+## 6. Merge Conflict
+
+### Commands Used
+
+```bash
+git merge <branch-name>
+```
+
+After resolving the conflict:
+
+```bash
+git add <file-name>
+git commit
+```
+
+### Explanation
+
+A merge conflict occurs when Git cannot automatically decide which changes should be kept.
+
+I manually edited the conflicting file, selected the correct content, staged the resolved file using `git add`, and created a commit to complete the merge.
+
+---
+
+## 7. Rebase Conflict
+
+### Commands Used
+
+```bash
+git rebase <branch-name>
+```
+
+After resolving the conflict:
+
+```bash
+git add <file-name>
+git rebase --continue
+```
+
+### Explanation
+
+A conflict can also occur during a rebase.
+
+After manually resolving the conflict, I staged the corrected file using `git add` and used `git rebase --continue` to continue applying the remaining commits.
+
+---
+
+## 8. Cherry-Pick
+
+### Command Used
+
+```bash
+git cherry-pick <commit-hash>
+```
+
+### Explanation
+
+The `git cherry-pick` command copies a specific commit from another branch and applies it to the current branch.
+
+I used this when only one particular commit was required instead of merging the entire branch.
+
+---
+
+## 9. Reset
+
+### Command Used
+
+```bash
+git reset --hard <commit-hash>
+```
+
+### Explanation
+
+The `git reset` command moves the current branch to a specified commit.
+
+Using the `--hard` option also updates the working directory and staging area to match that commit.
+
+This was useful when the repository needed to return to a previous state.
+
+---
+
+## 10. Revert
+
+### Command Used
+
+```bash
+git revert <commit-hash>
+```
+
+### Explanation
+
+`git revert` creates a new commit that reverses the changes made by an earlier commit.
+
+Unlike `git reset`, it does not remove commits from the history, making it useful when the existing history should be preserved.
+
+---
+
+## 11. Amend
+
+### Command Used
+
+```bash
+git commit --amend
+```
+
+### Explanation
+
+The `--amend` option modifies the most recent commit.
+
+It can be used to change the commit message or include additional changes in the previous commit.
+
+---
+
+## 12. Interactive Rebase
+
+### Command Used
+
+```bash
+git rebase -i <commit>
+```
+
+### Explanation
+
+Interactive rebase allows commits to be edited, reordered, squashed, or removed.
+
+I used this to manipulate the commit history and arrange the commits into the required order.
+
+---
+
+## 13. Squashing Commits
+
+### Command Used
+
+```bash
+git rebase -i HEAD~<number>
+```
+
+Then:
+
+```text
+pick <commit>
+squash <commit>
+```
+
+### Explanation
+
+Squashing combines multiple commits into a single commit.
+
+I used interactive rebase and changed the required commits from `pick` to `squash` so that multiple commits could be combined into one.
+
+---
+
+## 14. Reordering Commits
+
+### Command Used
+
+```bash
+git rebase -i HEAD~<number>
+```
+
+### Explanation
+
+Interactive rebase can also be used to change the order of commits.
+
+I rearranged the commit lines in the interactive rebase editor so that Git replayed them in the required order.
+
+---
+
+## 15. Deleting a Commit
+
+### Command Used
+
+```bash
+git rebase -i HEAD~<number>
+```
+
+### Explanation
+
+To remove a commit from history, I used interactive rebase and deleted the corresponding commit line or changed its action to `drop`.
+
+Git then recreated the branch history without that commit.
+
+---
+
+## 16. Changing a Commit
+
+### Commands Used
+
+```bash
+git rebase -i HEAD~<number>
+```
+
+Then:
+
+```text
+edit <commit>
+```
+
+After making changes:
+
+```bash
+git add <file-name>
+git commit --amend
+git rebase --continue
+```
+
+### Explanation
+
+I used interactive rebase to stop at a specific commit and modify it.
+
+After editing the required changes, I staged them, amended the commit, and continued the rebase.
+
+---
+
+## 17. Creating and Switching Branches
+
+### Command Used
+
+```bash
+git switch -c <branch-name>
+```
+
+Or:
+
+```bash
+git checkout -b <branch-name>
+```
+
+### Explanation
+
+This command creates a new branch and immediately switches to it.
+
+It is useful when starting a new line of development from the current commit.
+
+---
+
+## 18. Viewing Commit History
+
+### Command Used
+
+```bash
+git log
+```
+
+### Explanation
+
+The `git log` command displays the commit history of the repository.
+
+I used it to identify commit hashes and understand the structure of the repository before performing operations such as rebasing, resetting, or cherry-picking.
+
+---
+
+## 19. Viewing the Current Repository State
+
+### Command Used
+
+```bash
+git status
+```
+
+### Explanation
+
+The `git status` command shows the current state of the working directory and staging area.
+
+It helps identify modified, staged, and untracked files and was useful for checking whether the repository was in the correct state before committing or continuing an operation.
+
+---
+
+# Challenges Faced
+
+While completing the exercises, the most challenging parts were understanding how Git history changes during operations such as rebasing, resetting, and cherry-picking.
+
+Initially, I found it difficult to understand the difference between `merge` and `rebase`. After completing the exercises, I understood that:
+
+* `merge` combines histories and may create a merge commit.
+* `rebase` rewrites commits by replaying them on top of another commit, resulting in a more linear history.
+
+Merge and rebase conflicts were also challenging because Git pauses the operation when it cannot automatically combine changes. These were resolved by manually fixing the conflicting files, staging the resolved files, and using commands such as:
+
+```bash
+git merge --continue
+```
+
+or:
+
+```bash
+git rebase --continue
+```
+
+Another important lesson was understanding the difference between:
+
+```bash
+git reset
+```
+
+and:
+
+```bash
+git revert
+```
+
+`git reset` changes the branch history, while `git revert` creates a new commit that reverses the changes of a previous commit.
+
+---
+
+# Key Learnings
+
+Through these exercises, I learned:
+
+* How Git tracks changes using commits.
+* How to create and switch between branches.
+* How to merge branches.
+* The difference between merging and rebasing.
+* How to resolve merge and rebase conflicts.
+* How to use `git cherry-pick` to apply specific commits.
+* How to undo changes using `reset` and `revert`.
+* How to modify, reorder, squash, and remove commits using interactive rebase.
+* How to inspect the repository using `git status` and `git log`.
+
+Overall, this task helped me understand how Git manages project history and how different commands can be used to manipulate commits and branches efficiently.
