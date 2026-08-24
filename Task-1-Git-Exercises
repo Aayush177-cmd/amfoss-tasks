@@ -1,28 +1,18 @@
 # Task 01 – Git Exercises
 
-## Overview
-
-For this task, I completed the Git Exercises to strengthen my understanding of Git and version control. The exercises covered important Git concepts such as commits, branches, merging, rebasing, conflict resolution, cherry-picking, resetting, and manipulating commit history.
-
-The goal of this task was not only to complete the levels, but also to understand why each Git command was used and how it affects the repository and commit history.
-
----
-
 # Exercises
-
-> **Note:** Replace or adjust the commands below if your exact solution for a level was different.
 
 ## 1. Commit
 
-### Command Used
-
-```bash
+Command Used
+git add
 git commit
-```
 
-### Explanation
+Explanation
 
-The `git commit` command creates a new commit containing the changes that have been staged. A commit acts like a saved checkpoint in the project's history.
+The git add command is used to add the file on the stagging area .
+
+The git commit command creates a new commit containing the changes that have been staged. A commit acts like a saved checkpoint in the project's history.
 
 I used this command to create the required commit and move the repository to the expected state.
 
@@ -32,22 +22,19 @@ I used this command to create the required commit and move the repository to the
 
 ### Command Used
 
-```bash
 git branch <branch-name>
 git checkout <branch-name>
-```
 
 Or:
 
-```bash
 git checkout -b <branch-name>
-```
+
 
 ### Explanation
 
 A branch allows development to happen independently from the main branch.
 
-The `git branch` command creates a new branch, while `git checkout` switches to it. The `-b` option can create and switch to the branch in a single command.
+The git branch command creates a new branch, while git checkout switches to it. The -b option can create and switch to the branch in a single command.
 
 ---
 
@@ -55,13 +42,12 @@ The `git branch` command creates a new branch, while `git checkout` switches to 
 
 ### Command Used
 
-```bash
 git merge <branch-name>
-```
+
 
 ### Explanation
 
-The `git merge` command combines the changes from another branch into the currently checked-out branch.
+The git merge command combines the changes from another branch into the currently checked-out branch.
 
 I used it to bring the commits from one branch into another and combine their histories.
 
@@ -71,9 +57,8 @@ I used it to bring the commits from one branch into another and combine their hi
 
 ### Command Used
 
-```bash
 git rebase <branch-name>
-```
+
 
 ### Explanation
 
@@ -87,9 +72,7 @@ Unlike merging, rebasing can create a cleaner and more linear commit history.
 
 ### Command Used
 
-```bash
 git merge <branch-name>
-```
 
 ### Explanation
 
@@ -103,22 +86,18 @@ Instead of creating a new merge commit, Git simply moves the branch pointer forw
 
 ### Commands Used
 
-```bash
 git merge <branch-name>
-```
 
 After resolving the conflict:
 
-```bash
 git add <file-name>
 git commit
-```
 
 ### Explanation
 
 A merge conflict occurs when Git cannot automatically decide which changes should be kept.
 
-I manually edited the conflicting file, selected the correct content, staged the resolved file using `git add`, and created a commit to complete the merge.
+I manually edited the conflicting file, selected the correct content, staged the resolved file using git add, and created a commit to complete the merge.
 
 ---
 
@@ -126,22 +105,18 @@ I manually edited the conflicting file, selected the correct content, staged the
 
 ### Commands Used
 
-```bash
 git rebase <branch-name>
-```
 
 After resolving the conflict:
 
-```bash
 git add <file-name>
 git rebase --continue
-```
 
 ### Explanation
 
 A conflict can also occur during a rebase.
 
-After manually resolving the conflict, I staged the corrected file using `git add` and used `git rebase --continue` to continue applying the remaining commits.
+After manually resolving the conflict, I staged the corrected file using git add and used git rebase --continue to continue applying the remaining commits.
 
 ---
 
@@ -149,13 +124,11 @@ After manually resolving the conflict, I staged the corrected file using `git ad
 
 ### Command Used
 
-```bash
 git cherry-pick <commit-hash>
-```
 
 ### Explanation
 
-The `git cherry-pick` command copies a specific commit from another branch and applies it to the current branch.
+The git cherry-pick command copies a specific commit from another branch and applies it to the current branch.
 
 I used this when only one particular commit was required instead of merging the entire branch.
 
@@ -165,15 +138,13 @@ I used this when only one particular commit was required instead of merging the 
 
 ### Command Used
 
-```bash
 git reset --hard <commit-hash>
-```
 
 ### Explanation
 
-The `git reset` command moves the current branch to a specified commit.
+The git reset command moves the current branch to a specified commit.
 
-Using the `--hard` option also updates the working directory and staging area to match that commit.
+Using the --hard option also updates the working directory and staging area to match that commit.
 
 This was useful when the repository needed to return to a previous state.
 
@@ -183,15 +154,13 @@ This was useful when the repository needed to return to a previous state.
 
 ### Command Used
 
-```bash
 git revert <commit-hash>
-```
 
 ### Explanation
 
-`git revert` creates a new commit that reverses the changes made by an earlier commit.
+git revert creates a new commit that reverses the changes made by an earlier commit.
 
-Unlike `git reset`, it does not remove commits from the history, making it useful when the existing history should be preserved.
+Unlike git reset, it does not remove commits from the history, making it useful when the existing history should be preserved.
 
 ---
 
@@ -199,13 +168,12 @@ Unlike `git reset`, it does not remove commits from the history, making it usefu
 
 ### Command Used
 
-```bash
 git commit --amend
-```
+
 
 ### Explanation
 
-The `--amend` option modifies the most recent commit.
+The --amend option modifies the most recent commit.
 
 It can be used to change the commit message or include additional changes in the previous commit.
 
@@ -215,9 +183,8 @@ It can be used to change the commit message or include additional changes in the
 
 ### Command Used
 
-```bash
 git rebase -i <commit>
-```
+
 
 ### Explanation
 
@@ -231,22 +198,18 @@ I used this to manipulate the commit history and arrange the commits into the re
 
 ### Command Used
 
-```bash
 git rebase -i HEAD~<number>
-```
 
 Then:
 
-```text
 pick <commit>
 squash <commit>
-```
 
 ### Explanation
 
 Squashing combines multiple commits into a single commit.
 
-I used interactive rebase and changed the required commits from `pick` to `squash` so that multiple commits could be combined into one.
+I used interactive rebase and changed the required commits from pick to squash so that multiple commits could be combined into one.
 
 ---
 
@@ -254,9 +217,7 @@ I used interactive rebase and changed the required commits from `pick` to `squas
 
 ### Command Used
 
-```bash
 git rebase -i HEAD~<number>
-```
 
 ### Explanation
 
@@ -270,13 +231,11 @@ I rearranged the commit lines in the interactive rebase editor so that Git repla
 
 ### Command Used
 
-```bash
 git rebase -i HEAD~<number>
-```
 
 ### Explanation
 
-To remove a commit from history, I used interactive rebase and deleted the corresponding commit line or changed its action to `drop`.
+To remove a commit from history, I used interactive rebase and deleted the corresponding commit line or changed its action to drop.
 
 Git then recreated the branch history without that commit.
 
@@ -286,23 +245,18 @@ Git then recreated the branch history without that commit.
 
 ### Commands Used
 
-```bash
 git rebase -i HEAD~<number>
-```
 
 Then:
 
-```text
 edit <commit>
-```
+
 
 After making changes:
 
-```bash
 git add <file-name>
 git commit --amend
 git rebase --continue
-```
 
 ### Explanation
 
@@ -316,15 +270,11 @@ After editing the required changes, I staged them, amended the commit, and conti
 
 ### Command Used
 
-```bash
 git switch -c <branch-name>
-```
 
 Or:
 
-```bash
 git checkout -b <branch-name>
-```
 
 ### Explanation
 
@@ -338,13 +288,11 @@ It is useful when starting a new line of development from the current commit.
 
 ### Command Used
 
-```bash
 git log
-```
 
 ### Explanation
 
-The `git log` command displays the commit history of the repository.
+The git log command displays the commit history of the repository.
 
 I used it to identify commit hashes and understand the structure of the repository before performing operations such as rebasing, resetting, or cherry-picking.
 
@@ -354,13 +302,11 @@ I used it to identify commit hashes and understand the structure of the reposito
 
 ### Command Used
 
-```bash
 git status
-```
 
 ### Explanation
 
-The `git status` command shows the current state of the working directory and staging area.
+The git status command shows the current state of the working directory and staging area.
 
 It helps identify modified, staged, and untracked files and was useful for checking whether the repository was in the correct state before committing or continuing an operation.
 
@@ -370,38 +316,29 @@ It helps identify modified, staged, and untracked files and was useful for check
 
 While completing the exercises, the most challenging parts were understanding how Git history changes during operations such as rebasing, resetting, and cherry-picking.
 
-Initially, I found it difficult to understand the difference between `merge` and `rebase`. After completing the exercises, I understood that:
+Initially, I found it difficult to understand the difference between merge and rebase. After completing the exercises, I understood that:
 
-* `merge` combines histories and may create a merge commit.
-* `rebase` rewrites commits by replaying them on top of another commit, resulting in a more linear history.
+* merge combines histories and may create a merge commit.
+* rebase rewrites commits by replaying them on top of another commit, resulting in a more linear history.
 
 Merge and rebase conflicts were also challenging because Git pauses the operation when it cannot automatically combine changes. These were resolved by manually fixing the conflicting files, staging the resolved files, and using commands such as:
 
-```bash
 git merge --continue
-```
 
 or:
 
-```bash
 git rebase --continue
-```
 
 Another important lesson was understanding the difference between:
 
-```bash
 git reset
-```
 
 and:
 
-```bash
 git revert
-```
 
-`git reset` changes the branch history, while `git revert` creates a new commit that reverses the changes of a previous commit.
 
----
+git reset changes the branch history, while git revert creates a new commit that reverses the changes of a previous commit.
 
 # Key Learnings
 
@@ -412,9 +349,9 @@ Through these exercises, I learned:
 * How to merge branches.
 * The difference between merging and rebasing.
 * How to resolve merge and rebase conflicts.
-* How to use `git cherry-pick` to apply specific commits.
-* How to undo changes using `reset` and `revert`.
+* How to use git cherry-pick to apply specific commits.
+* How to undo changes using reset and revert.
 * How to modify, reorder, squash, and remove commits using interactive rebase.
-* How to inspect the repository using `git status` and `git log`.
+* How to inspect the repository using git status and git log.
 
 Overall, this task helped me understand how Git manages project history and how different commands can be used to manipulate commits and branches efficiently.
