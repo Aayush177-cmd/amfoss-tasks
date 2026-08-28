@@ -53,7 +53,7 @@ Memory information is read from:
 /proc/<PID>/status
 
 
-The program uses the `VmRSS` value to find the physical memory currently being used by the process.
+The program uses the 'VmRSS' value to find the physical memory currently being used by the process.
 
 ### CPU usage
 
@@ -113,10 +113,10 @@ While working on this project, I learned about:
 - The '/proc' virtual filesystem
 - Reading process information from the Linux kernel
 - CPU usage calculation
-- Memory usage using `VmRSS`
+- Memory usage using 'VmRSS'
 - Process signals and termination
 - Real-time monitoring
-- Building terminal interfaces using Python `curses`
+- Building terminal interfaces using Python 'curses'
 
 ## Resources used
 
