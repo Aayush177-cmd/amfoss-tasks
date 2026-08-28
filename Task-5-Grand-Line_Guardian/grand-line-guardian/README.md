@@ -1,5 +1,9 @@
 # Grand Line Guardian
 
+## Screenshot
+
+![Grand Line Guardian](screenshots/grand-line-guardian.png)
+
 Grand Line Guardian is a terminal-based system monitoring tool for Linux. It is inspired by tools like 'htop' and displays information about currently running processes.
 
 The program reads process information directly from the Linux '/proc' virtual filesystem and updates the display in real time.
