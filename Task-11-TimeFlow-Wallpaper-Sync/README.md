@@ -1,4 +1,4 @@
-# ⏳ TimeFlow Wallpaper Sync
+# TimeFlow Wallpaper Sync
 
 TimeFlow Wallpaper Sync is a Python application that transforms your desktop wallpaper into a live information dashboard.
 
@@ -8,105 +8,91 @@ The application continuously monitors the text file and automatically updates th
 
 ---
 
-## ✨ Features
+## Features
 
-- 🕒 **Live Clock** – Displays the current time with seconds.
-- 📅 **Current Date** – Shows the current day and date.
-- 📝 **Text File Sync** – Reads notes, plans, schedules, or reminders from `notes.txt`.
-- 🔄 **Automatic File Monitoring** – Detects changes in `notes.txt` using `watchdog`.
-- 🖼️ **Dynamic Wallpaper Updates** – Regenerates and applies the wallpaper automatically.
-- 🌈 **Colorful Dashboard Design** – Gradient background with purple, blue, cyan, and pink accents.
-- 📏 **Automatic Text Wrapping** – Long lines are wrapped to fit inside the wallpaper.
-- 📄 **Empty File Handling** – Displays a message when the file is empty.
-- ⚠️ **Missing File Handling** – Displays a message when `notes.txt` is missing.
-- 🐧 **Ubuntu Integration** – Uses `gsettings` to automatically apply the generated wallpaper.
-- ⌨️ **Clean Shutdown** – The program can be stopped safely using `Ctrl + C`.
+-  **Live Clock** – Displays the current time with seconds.
+-  **Current Date** – Shows the current day and date.
+-  **Text File Sync** – Reads notes, plans, schedules, or reminders from 'notes.txt'.
+-  **Automatic File Monitoring** – Detects changes in 'notes.txt' using 'watchdog'.
+-  **Dynamic Wallpaper Updates** – Regenerates and applies the wallpaper automatically.
+-  **Colorful Dashboard Design** – Gradient background with purple, blue, cyan, and pink accents.
+-  **Automatic Text Wrapping** – Long lines are wrapped to fit inside the wallpaper.
+-  **Empty File Handling** – Displays a message when the file is empty.
+-  **Missing File Handling** – Displays a message when 'notes.txt' is missing.
+-  **Ubuntu Integration** – Uses 'gsettings' to automatically apply the generated wallpaper.
+-  **Clean Shutdown** – The program can be stopped safely using 'Ctrl + z'.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
-```text
+
 Task-11-TimeFlow-Wallpaper-Sync/
-│
-├── main.py
-├── notes.txt
-├── requirements.txt
-├── README.md
-├── .gitignore
-└── wallpaper.png
-```
+main.py
+notes.txt
+requirements.txt
+README.md
+.gitignore
+wallpaper.png
 
-> `wallpaper.png` is generated automatically when the program runs.
+
+> 'wallpaper.png' is generated automatically when the program runs.
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Clone the repository
 
-```bash
 git clone <YOUR-REPOSITORY-URL>
 cd amfoss-tasks/Task-11-TimeFlow-Wallpaper-Sync
-```
+
 
 ### 2. Create a virtual environment
 
-```bash
 python3 -m venv venv
-```
+
 
 ### 3. Activate the virtual environment
 
-```bash
 source venv/bin/activate
-```
 
 ### 4. Install dependencies
 
-```bash
 pip install -r requirements.txt
-```
-
 ---
 
-## 🚀 Usage
+##  Usage
 
 Run the application:
 
-```bash
 python3 main.py
-```
 
 The program will:
 
-1. Read the content of `notes.txt`.
+1. Read the content of 'notes.txt'.
 2. Generate a colorful wallpaper containing the notes.
 3. Display the current time and date.
 4. Update the time every second.
-5. Monitor `notes.txt` for changes.
+5. Monitor 'notes.txt' for changes.
 6. Automatically update the wallpaper when the file is modified.
 
 Stop the application using:
 
-```text
-Ctrl + C
-```
+Ctrl + z
 
 ---
 
-## 📝 Editing Notes
+##  Editing Notes
 
-Edit `notes.txt` while the application is running:
+Edit 'notes.txt' while the application is running:
 
-```text
 Today's Plan
 
 1. Complete ASK-11
 2. Study Python
 3. Practice DSA
 4. Push the project to GitHub
-```
 
 Save the file.
 
@@ -114,45 +100,37 @@ TimeFlow automatically detects the change and updates the wallpaper.
 
 ---
 
-## 🧪 Edge Case Handling
+##  Edge Case Handling
 
 ### Empty File
 
-If `notes.txt` is empty, the wallpaper displays:
+If 'notes.txt' is empty, the wallpaper displays:
 
-```text
 The file is empty.
-```
 
 ### Missing File
 
-If `notes.txt` does not exist, the wallpaper displays:
+If notes.txt does not exist, the wallpaper displays:
 
-```text
 File not found: notes.txt
-```
 
 ### Long Text
 
 Long lines are automatically wrapped to fit inside the notes panel. If the content exceeds the available vertical space, the remaining content is represented with:
 
-```text
-...
-```
+' ... '
 
 ---
 
-## 🎨 Customization
+##  Customization
 
-The wallpaper theme can be customized by changing the RGB color values inside `main.py`.
+The wallpaper theme can be customized by changing the RGB color values inside 'main.py'.
 
 For example:
 
-```python
 CYAN = (80, 230, 255)
 PURPLE = (190, 120, 255)
 PINK = (255, 100, 190)
-```
 
 The background gradient can also be changed:
 
