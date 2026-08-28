@@ -1,0 +1,10 @@
+My Schedule
+write readme files for the remaining tasks
+completed tasks:
+1. git exercises
+2. terminal hunt
+3. systems
+4. discord bot
+5. ohara archive 
+6. timeflow-wallpaper
+
