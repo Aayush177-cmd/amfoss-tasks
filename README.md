@@ -2,7 +2,7 @@
 
 ## INTRODUCTION
 
-My name is Ayush, and I am a first-year BTech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Amritapuri campus. I am interested in programming and technology, and I am currently working on improving my programming fundamentals and learning how to work with different tools and technologies.My hobbies include Playing Basketball,Drawing Cartoons,animation etc,Also i am really commited on putting the hardwork and give my best on every work i take on.
+My name is Ayush, and I am a Second-year BTech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Amritapuri campus. I am interested in programming and technology, and I am currently working on improving my programming fundamentals and learning how to work with different tools and technologies.My hobbies include Playing Basketball,Drawing Cartoons,animation etc,Also i am really commited on putting the hardwork and give my best on every work i take on.
 
 The AMFOSS tasks have been a good learning experience for me because they have required me to explore things beyond what I normally work with. I have learned through trial and error, debugging, documentation, and solving problems step by step.
 
